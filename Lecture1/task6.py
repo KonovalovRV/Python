@@ -6,3 +6,32 @@
 # Пример:
 # 385916 -> yes
 # 123456 -> no
+
+
+print("Введите шестизначное число-->   ")
+num = int(input())
+
+
+def SumPartsNumber(value):
+    sum = 0
+    sum1 = 0
+    i = 0
+    while i < 3:
+        sum += value % 10
+        sum1 += (value//1000) % 10
+        value = value//10
+        i = i+1
+    return sum, sum1
+
+
+num1, num2 = SumPartsNumber(num)
+
+
+def HappyNumber(arg1, arg2, numb):
+    if (arg1 == arg2):
+        print(f'{numb} --> yes')
+    else:
+        print(f'{numb} --> no')
+
+
+HappyNumber(num1, num2, num)
