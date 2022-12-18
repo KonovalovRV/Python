@@ -14,21 +14,26 @@ seg = int(input())
 
 
 def validate(m, n, k):
-
-    if k >= m*n:
+    if k == m*n:
         return 1
-    if k < n and k < m:
-        return 1
+        if k > m*n:
+            return 1
+            if k <= n and k <= m:
+                return 1
     else:
         return k
 
+
 def quatity_segment_chocolate(mm, nn, kk):
+    if kk==1:
+        return '--> no'
     if kk % mm == 0 or kk % nn == 0:
         return '--> yes'
     else:
         return '--> no'
 
+
 segg = validate(seg_l, seg_w, seg)
 
-d=quatity_segment_chocolate(seg_l, seg_w, segg)
+d = quatity_segment_chocolate(seg_l, seg_w, segg)
 print(d)
