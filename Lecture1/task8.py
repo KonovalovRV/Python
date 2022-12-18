@@ -25,7 +25,7 @@ def validate(m, n, k):
 
 
 def quatity_segment_chocolate(mm, nn, kk):
-    if kk==1:
+    if kk == 1:
         return '--> no'
     if kk % mm == 0 or kk % nn == 0:
         return '--> yes'
