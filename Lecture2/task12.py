@@ -8,6 +8,9 @@ print('Введите сумму 2-х чисел --> ')
 arg1 = int(input())
 print('Введите произведение этих же 2-х чисел --> ')
 arg2 = int(input())
+print('Введите верхнюю границу поиска например 1000 --> ')
+arg3 = int(input())
+
 
 
 def ClueTwoNumbers(sum_numbers, multiply_numbers, final_numbers):
@@ -26,6 +29,6 @@ def ClueTwoNumbers(sum_numbers, multiply_numbers, final_numbers):
     return (x1, y1)
 
 
-(a, b) = ClueTwoNumbers(arg1, arg2)
+(a, b) = ClueTwoNumbers(arg1, arg2,arg3)
 
 print(f"{a}+{b}'='{arg1},{a}x{a}'='{arg2}")
