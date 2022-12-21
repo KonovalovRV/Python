@@ -25,7 +25,6 @@ def ClueTwoNumbers(sum_numbers, multiply_numbers, final_numbers):
                 x1 = x
                 y1 = y
                 y+=1
-                break
     return (x1, y1)
 
 
