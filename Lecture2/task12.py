@@ -12,22 +12,19 @@ print('Введите верхнюю границу поиска наприме�
 arg3 = int(input())
 
 
-
 def ClueTwoNumbers(sum_numbers, multiply_numbers, final_numbers):
     x = 0
-    y = 0
-    x1 = 0
-    y1 = 0
+    # x1 = 0
+    # y1 = 0
     while x <= final_numbers:
-        x += 1
+        x = x+1
+        y = 0
         while y <= final_numbers:
+            y = y+1
             if (x + y == sum_numbers and x * y == multiply_numbers):
-                x1 = x
-                y1 = y
-                y+=1
-    return (x1, y1)
+                return x,y
+                
+a,b=ClueTwoNumbers(arg1, arg2, arg3)
 
-
-(a, b) = ClueTwoNumbers(arg1, arg2,arg3)
-
-print(f"{a}+{b}'='{arg1},{a}x{a}'='{arg2}")
+print(f'Петя загадал цифры {a} и {b}')
+print(f"проверка --> {a} + {b} = {arg1}, {a}x{b}= {arg2}")
