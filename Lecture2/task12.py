@@ -14,8 +14,6 @@ arg3 = int(input())
 
 def ClueTwoNumbers(sum_numbers, multiply_numbers, final_numbers):
     x = 0
-    # x1 = 0
-    # y1 = 0
     while x <= final_numbers:
         x = x+1
         y = 0
