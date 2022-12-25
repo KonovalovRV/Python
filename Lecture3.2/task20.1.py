@@ -47,18 +47,14 @@ wordd = input().upper()
 def find_cost_russian_word(word):
     sum = 0
     for item in word:
-        for v in dictionary_russian:
-            if item == v:
-                sum = sum + dictionary_russian[v]
+        sum = sum + dictionary_russian[item]
     return sum
 
 
 def find_cost_english_word(word):
     sum = 0
     for item in word:
-        for v in dictionary_english:
-            if item == v:
-                sum = sum + dictionary_english[v]
+      sum = sum + dictionary_english[item]
     return sum
 
 
