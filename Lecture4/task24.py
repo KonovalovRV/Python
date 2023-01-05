@@ -16,43 +16,35 @@
 
 import random
 
+list = []
+print('Введите количество кустов на грядке --->')
+length = int(input())
 
-def print_array(mass):
-    for num in range(1, len+1):
+def print_array(mass, leng):
+    for num in range(1, leng+1):
         number_random = random.randrange(1, 25)
         mass.append(number_random)
+
     print(mass)
 
-
 def quantity_berry_on_the_Bush(arr):
-    max = 0
-    i = 0
-    sum = 0
 
-    for i in arr:
-        while count < 3:
-            sum = sum + i
-            if (sum > max):
-                max = sum
-        count = count + 1
-    print(max)
-
-    # while i < len.arr:
-    #     count = 0
-    #     if (len.arr - i < 3):
-    #         break
-    #     while count < 3:
-    #         sum += arr[i]
-    #         if (sum > max):
-    #             max = sum
-    #             count += 1
-
-
-array = []
-print('Введите количество кустов на грядке --->')
-len = int(input())
+    for j in range(len(arr)):
+        max = 0
+        sum = 0
+        count = 0
+        for i in range(len(arr)):
+            if count < 3:
+                sum += arr[i]
+                count += 1
+                if (sum > max):
+                    max = sum
+            else:
+                arr.pop(0)
+    return max
 
 print('Количество ягод на каждом кусте')
-print_array(array)
-quantity_berry_on_the_Bush(array)
-# print(f'Максимальное количество ягод, которое можеть собрать модуль с куста и двух соседних с ним равно {num}')
+print_array(list, length)
+a=quantity_berry_on_the_Bush(list)
+print(f'Максимальное количество ягод, которое может собрать модуль с куста и двух соседних с ним равно {a}')
+

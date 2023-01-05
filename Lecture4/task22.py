@@ -14,59 +14,51 @@
 
 import random
 
-print('Введите размер первого массива -- >  ')
-len = int(input())
-print('Введите размер второго массива -- >  ')
-leng = int(input())
+print('Введите размер первого множества чисел -- >  ')
+leng_1 = int(input())
+print('Введите размер второго множества чисел -- >  ')
+leng_2 = int(input())
 
+a = set()
+b = set()
 list = []
-list1 = []
 
 
-def print_array(array, length):
-    for num in range(1, length):
-        random_number = random.randrange(1, 20)
-        array.append(random_number)
+def print_set(array, length):
+    for num in range(0, length+1):
+        random_number = round(random.randrange(1, 100))
+        array.add(random_number)
     print(array)
 
+def intersection_set(set_1, set_2):
+    c = set_1.intersection(set_2)
+    return c
 
-def array_identical_value(array1, array2):
-    list4 = []
-    for num in array1:
-        for num1 in array2:
-            if num == num1:
-                list4.append (num)
-        return list4       
-        break
+def transfer_from_set_to_list(set, list4):
+    for num in set:
+        list4.append(num)
+    return list4
 
-
-def print_arr(array10):
-    for i in array10:
-        print (array10)
-  
-
-
-    
-
-
-# def array_increasing_value(array3):
-#     list4 = []
-#     for num in array3:
-#         if num == num:
-#             list4.append(num)
-#                 break
-#     print(list4)
-
-
-
-
-
+def location_increasing_value(list_1):
+    temp = 0
+    for i in range(len(list_1)):
+        if list_1[i] > list_1[0]:
+            continue
+        else:
+            temp = list_1[i]
+            list_1[i] = list_1[0]
+            list_1[0] = temp
+    print(list_1)
 
 print('Первый набор чисел')
-print_array(list, len)
+print_set(a, leng_1)
 print('Второй набор чисел')
-print_array(list1, leng)
-print('Значения из обоих массивов')
-a=array_identical_value(list, list1)
-# dell_value(a)
-print_arr(a)
+print_set(b, leng_2)
+print('Значения общие для обоих множеств')
+f = intersection_set(a, b)
+print(f)
+
+t=transfer_from_set_to_list(f, list)
+
+print('Расположение значений по возрастанию')
+location_increasing_value(t)
