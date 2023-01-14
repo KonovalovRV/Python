@@ -40,25 +40,25 @@ def transfer_from_set_to_list(set, list4):
     return list4
 
 def location_increasing_value(list_1):
-    temp = 0
     for i in range(len(list_1)):
-        if list_1[i] > list_1[0]:
-            continue
-        else:
-            temp = list_1[i]
-            list_1[i] = list_1[0]
-            list_1[0] = temp
+        max = list_1[0]
+        for i in range(len(list_1)):
+            temp = 0
+            if list_1[i] < max:
+                temp = list_1[i]
+                list_1[i] = max
+                max = temp
+            else:
+                continue
     print(list_1)
 
 print('Первый набор чисел')
 print_set(a, leng_1)
 print('Второй набор чисел')
 print_set(b, leng_2)
-print('Значения общие для обоих множеств')
 f = intersection_set(a, b)
-print(f)
 
 t=transfer_from_set_to_list(f, list)
 
-print('Расположение значений по возрастанию')
+print('Общие значение для обоих множеств')
 location_increasing_value(t)
