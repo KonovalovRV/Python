@@ -1,0 +1,3 @@
+Ivanov,Ivan,Ivanovich,+88009005555
+Sidor,Sidorov,Ivanovich,88007890001
+Boris,Borisov,Borisovich,+88008000001
